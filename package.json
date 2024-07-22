@@ -1,17 +1,19 @@
 {
-  "name": "vite-vanilla-library",
+  "name": "funny-storage",
   "version": "0.0.0",
   "type": "module",
   "exports": {
     ".": {
-      "import": "./dist/vite-vanilla-library.js",
-      "require": "./dist/vite-vanilla-library.cjs"
+      "import": "./dist/funny-storage.js",
+      "require": "./dist/funny-storage.cjs"
     }
   },
-  "main": "./dist/vite-vanilla-library.cjs",
-  "module": "./dist/vite-vanilla-library.js",
-  "types": "./dist/vite-vanilla-library.d.ts",
-  "files": ["dist"],
+  "main": "./dist/funny-storage.cjs",
+  "module": "./dist/funny-storage.js",
+  "types": "./dist/funny-storage.d.ts",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
@@ -40,5 +42,6 @@
   },
   "lint-staged": {
     "*.ts": "pnpm run lint"
-  }
+  },
+  "packageManager": "pnpm@9.0.0"
 }
