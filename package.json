@@ -1,0 +1,44 @@
+{
+  "name": "vite-vanilla-library",
+  "version": "0.0.0",
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./dist/vite-vanilla-library.js",
+      "require": "./dist/vite-vanilla-library.cjs"
+    }
+  },
+  "main": "./dist/vite-vanilla-library.cjs",
+  "module": "./dist/vite-vanilla-library.js",
+  "types": "./dist/vite-vanilla-library.d.ts",
+  "files": ["dist"],
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "release": "pnpm test && pnpm build && changelogen --release --push && pnpm publish",
+    "lint": "eslint . --fix",
+    "test": "vitest --run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest --coverage",
+    "prepare": "husky install"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^2.23.1",
+    "@commitlint/cli": "^19.3.0",
+    "@commitlint/config-conventional": "^19.2.2",
+    "@types/node": "^20.14.11",
+    "@vitest/coverage-v8": "^1.6.0",
+    "camelcase": "^8.0.0",
+    "changelogen": "^0.5.5",
+    "eslint": "^9.7.0",
+    "husky": "^9.1.1",
+    "lint-staged": "^15.2.7",
+    "typescript": "^5.5.3",
+    "vite": "^5.3.4",
+    "vite-plugin-dts": "^3.9.1",
+    "vitest": "^1.6.0"
+  },
+  "lint-staged": {
+    "*.ts": "pnpm run lint"
+  }
+}
